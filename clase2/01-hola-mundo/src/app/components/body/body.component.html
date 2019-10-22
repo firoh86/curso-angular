@@ -1,0 +1,26 @@
+<div class="row">
+    <div class="col">
+        <h1>*ngIf</h1>
+        <hr />
+        <!-- *ngIf funciona con expresiones logicas que den como resultado verdadero o falso  -->
+        <div *ngIf="mostrar" class="card">
+            <div class="card-header">{{ frase.autor }}</div>
+            <div class="card-body">
+                <p class="card-text">{{ frase.mensaje }}</p>
+            </div>
+        </div>
+        <button (click)="mostrar = !mostrar" class="card-btn">
+      Mostrar/ocultar
+    </button>
+    </div>
+    <div class="col">
+        <!-- *ngFor funciona con variables de tipo Array -->
+        <h1>*ngFor</h1>
+        <hr />
+        <ul class="card-ul">
+            <li *ngFor="let personaje of personajes; let i = index" class="card-li">
+                {{ i + 1 }} - {{ personaje }}
+            </li>
+        </ul>
+    </div>
+</div>

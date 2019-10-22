@@ -1,0 +1,66 @@
+.navbar {
+    background-color: rgb(27, 27, 27);
+    align-items: center;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.navbar-block1 {
+    display: flex;
+    height: 100%;
+}
+
+.navbar__button {
+    max-height: 100%;
+    min-width: 50px;
+}
+
+.navbar__brand img {
+    max-height: 100%;
+    min-width: 100%;
+}
+
+.navbar__brand {
+    padding: 0.4em;
+}
+
+.navbar-block2 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    margin-right: 10px;
+    position: relative;
+    left: 0;
+}
+
+.navbar__nav {
+    position: relative;
+    list-style: none;
+    display: flex;
+    min-width: 400px;
+    justify-content: space-evenly;
+}
+
+.navbar__link {
+    text-decoration: none;
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+    color: rgb(158, 158, 158);
+}
+
+.navbar__link:hover {
+    color: rgb(201, 201, 201);
+}
+
+.navbar-form {
+    display: flex;
+    justify-content: space-between;
+    max-height: 30px;
+}
+
+.active a {
+    font-weight: bold;
+    border-bottom: 1px solid white;
+    color: white;
+}

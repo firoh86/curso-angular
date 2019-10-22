@@ -1,0 +1,8 @@
+.header-tittle {
+    background-color: cornflowerblue;
+    height: 40px;
+    text-align: center;
+    text-transform: uppercase;
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+}

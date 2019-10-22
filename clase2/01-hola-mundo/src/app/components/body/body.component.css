@@ -1,0 +1,58 @@
+.row {
+    display: flex;
+    justify-content: space-around;
+}
+
+.col {
+    display: flex;
+    flex-direction: column;
+}
+
+.card {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    border-radius: 5px;
+    background-color: #0770fa;
+    font: bold;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.card-header {
+    padding: 1em;
+    border-bottom: 1px solid white;
+}
+
+.card-body {
+    padding: 1em;
+}
+
+.card-btn {
+    border-radius: 5px;
+    color: #0770fa;
+    font: bold;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding: 0.6em 0;
+    border: 1px solid #0770fa;
+    margin-top: 1em;
+}
+
+.card-btn:hover {
+    transform: scale(0.95);
+    color: white;
+    background-color: #0770fa;
+    border: none;
+}
+
+.card-ul {
+    margin: 0;
+    border-bottom: 1px solid lightgray;
+    list-style: none;
+}
+
+.card-li {
+    padding: 0.2em;
+    font: bold;
+    font-family: serif;
+}
