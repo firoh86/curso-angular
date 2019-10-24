@@ -77,4 +77,18 @@ export class PokemonsService {
   getPokemon(idx: number) {
     return this.pokemons[idx];
   }
+
+  buscarPokemon(termino: string) {
+    const pokemonsArr: any[] = [];
+    termino = termino.toLowerCase();
+
+    for (const poke of this.pokemons) {
+      const nombre = poke.nombre.toLowerCase();
+      if (nombre.indexOf(termino) >= 0) {
+        pokemonsArr.push(poke);
+        // console.log(poke.nombre);
+      }
+    }
+    return pokemonsArr;
+  }
 }

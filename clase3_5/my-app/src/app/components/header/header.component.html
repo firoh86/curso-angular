@@ -8,5 +8,9 @@
                 <a [routerLink]="['pokemons']" routerLinkActive="active">Pokemons</a>
             </li>
         </ul>
+        <form class="formSearch" (keydown.enter)="$event.preventDefault()">
+            <input type=" text " placeholder=" Buscar Pokemon " (keyup.enter)="buscarPokemon(buscarTexto.value) " #buscarTexto>
+            <button type="button " class="searchButton " (click)="buscarPokemon(buscarTexto.value)">Buscar</button>
+        </form>
     </div>
 </div>

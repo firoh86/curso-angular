@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
 import { PokemonsComponent } from './components/pokemons/pokemons.component';
 import { PokemonComponent } from './components/pokemon/pokemon.component';
+import { BuscadorComponent } from './components/buscador/buscador.component';
 
 const routes: Routes = [
   {
@@ -16,6 +17,11 @@ const routes: Routes = [
   {
     path: 'pokemon/:id',
     component: PokemonComponent
+  },
+  // Para el buscador de pokemons
+  {
+    path: 'buscar/:termino',
+    component: BuscadorComponent
   },
   // Si la ruta está vacia
   {

@@ -11,6 +11,9 @@ import { FooterComponent } from './components/footer/footer.component';
 import { HomeComponent } from './components/home/home.component';
 import { PokemonsComponent } from './components/pokemons/pokemons.component';
 import { PokemonComponent } from './components/pokemon/pokemon.component';
+import { BuscadorComponent } from './components/buscador/buscador.component';
+import { CardComponent } from './components/card/card.component';
+// para los prevent default de los formularios
 
 @NgModule({
   declarations: [
@@ -19,7 +22,9 @@ import { PokemonComponent } from './components/pokemon/pokemon.component';
     FooterComponent,
     HomeComponent,
     PokemonsComponent,
-    PokemonComponent
+    PokemonComponent,
+    BuscadorComponent,
+    CardComponent
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [PokemonsService],
