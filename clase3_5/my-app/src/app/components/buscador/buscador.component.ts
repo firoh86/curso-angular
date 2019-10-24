@@ -19,7 +19,7 @@ export class BuscadorComponent implements OnInit {
     this.activatedRoute.params.subscribe(params => {
       // console.log(params['termino']);
       this.pokemons = this.pokemonsService.buscarPokemon(params.termino);
-      // console.log(this.pokemons);
+      console.log(this.pokemons);
       this.termino = params['termino'];
     });
   }

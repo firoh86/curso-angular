@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { PokemonsService } from '../../services/pokemons.service';
 
 import { Router } from '@angular/router';
-
+// padre
 @Component({
   selector: 'app-pokemons',
   templateUrl: './pokemons.component.html',

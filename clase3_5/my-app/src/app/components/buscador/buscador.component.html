@@ -1,17 +1,9 @@
-<h1 class="card__tittle" *ngIf="pokemons.length<=1">Buscando: {{termino}} dió {{pokemons.length}} resultado</h1>
-<h1 class="card__tittle" *ngIf="pokemons.length>1">Buscando: {{termino}} dió {{pokemons.length}} resultados</h1>
+<h1 class="card__tittle" *ngIf="pokemons.length <= 1">
+    Buscando: {{ termino }} dió {{ pokemons.length }} resultado
+</h1>
+<h1 class="card__tittle" *ngIf="pokemons.length > 1">
+    Buscando: {{ termino }} dió {{ pokemons.length }} resultados
+</h1>
 <div class="card-column">
-    <div class="card" *ngFor="let pokemon of pokemons; let i = index">
-        <div class="img">
-            <img class="card__img" src="{{ pokemon.img }}" />
-        </div>
-        <div class="card-block">
-            <h3 class="card__tittle">{{ pokemon.nombre }}</h3>
-            <p class="card__element">Tipo: {{ pokemon.tipo }}</p>
-            <!-- para hacerlo con programación -->
-            <button class="card__button" type="button" name="button" [routerLink]="['/pokemons']">
-              volver
-            </button>
-        </div>
-    </div>
+    <app-card [pokemon]="pokemon" [index]="pokemon.idx" *ngFor="let pokemon of pokemons"></app-card>
 </div>

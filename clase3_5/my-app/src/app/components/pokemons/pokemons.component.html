@@ -1,4 +1,4 @@
 <div class="card-column">
     <!-- *ngFor="let pokemon of pokemons; let i = index" -->
-    <app-card [pokemon]="pokemon" [index]="i" *ngFor="let pokemon of pokemons; let i = index"></app-card>
+    <app-card (pokemonSeleccionado)="verPokemon($event)" [pokemon]="pokemon" [index]="i" *ngFor="let pokemon of pokemons; let i = index"></app-card>
 </div>
