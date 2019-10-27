@@ -1,0 +1,173 @@
+<!-- ¿Qué aprenderemos en esta sección?
+A continuación vamos a entrar a profundidad sobre el tema de los PIPES, que no es más que una transformación visual de la data.
+
+En detalle veremos:
+
+Pipes uppercase y lowercase
+Pipe Slice
+Pice Decimal
+Pipe Percent
+Pipe Currency
+Pipe Json
+Pipe Async
+Pipe Date
+Pipes personalizados
+Capitalizar palabras y nombres
+Creación de un pipe, que permite cargar recursos externos de forma segura.
+Al final de la sección tendremos una tarea para afianzar los conocimientos creando un pipe personalizado que nos permitirá ocultar un texto a voluntad. -->
+<h1>Pipes</h1>
+<div class="container">
+    <table>
+        <thead>
+            <th>Variables</th>
+            <th>Pipes</th>
+            <th>Producto</th>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{ nombre }}</td>
+                <td>|uppercase</td>
+                <td>{{ nombre | uppercase }}</td>
+            </tr>
+            <tr>
+                <td>{{ nombre }}</td>
+                <td>|lowercase</td>
+                <td>{{ nombre | lowercase }}</td>
+            </tr>
+            <tr class="lex">
+                {{ slice }}
+            </tr>
+            <tr>
+                <td>{{ nombre }}</td>
+                <td>|slice:3</td>
+                <td>{{ nombre | slice: 3 }}</td>
+            </tr>
+            <tr>
+                <td>{{ nombre }}</td>
+                <td>|slice:0:3</td>
+                <td>{{ nombre | slice: 0:3 }}</td>
+            </tr>
+            <tr>
+                <td>{{ arreglo }}</td>
+                <td>|slice:1:5</td>
+                <td>{{ arreglo | slice: 1:5 }}</td>
+            </tr>
+            <tr class="lex">
+                {{ decimal }}
+            </tr>
+            <tr>
+                <td>{{ PI }}</td>
+                <td>|number:'3.0-0'</td>
+                <td>{{ PI | number: '3.0-0' }}</td>
+            </tr>
+            <tr>
+                <td>{{ PI }}</td>
+                <td>|number:'1.0-2'</td>
+                <td>{{ PI | number: '1.0-2' }}</td>
+            </tr>
+            <tr class="lex">
+                {{ percent }}
+            </tr>
+            <tr>
+                <td>{{ a }}</td>
+                <td>|percent</td>
+                <td>{{ a | percent }}</td>
+            </tr>
+            <tr>
+                <td>{{ a }}</td>
+                <td>|percent:'2.2-2'</td>
+                <td>{{ a | percent: '2.2-2' }}</td>
+            </tr>
+            <tr class="lex">
+                {{ currency }}
+            </tr>
+            <tr>
+                <td>{{ salario }}</td>
+                <td>|currency</td>
+                <td>{{ salario | currency }}</td>
+            </tr>
+            <tr>
+                <td>{{ salario }}</td>
+                <td>|currency:'EUR'</td>
+                <td>{{ salario | currency: 'EUR' }}</td>
+            </tr>
+            <tr>
+                <td>{{ salario }}</td>
+                <td>|currency:'EUR':true</td>
+                <td>{{ salario | currency: 'EUR':true }}</td>
+            </tr>
+            <tr>
+                <td>{{ salario }}</td>
+                <td>|currency:'EUR':true:'4.0-0'</td>
+                <td>{{ salario | currency: 'EUR':true:'4.0-0' }}</td>
+            </tr>
+            <tr>
+                <td>{{ salario }}</td>
+                <td>number:'.2-2'</td>
+                <td>{{ salario | number: '.2-2' }}</td>
+            </tr>
+            <tr class="lex">
+                {{ json }}
+            </tr>
+            <tr>
+                <td>{{ heroe }}</td>
+                <td>|json</td>
+                <td>{{ heroe | json }}</td>
+            </tr>
+            <tr class="lex">
+                {{ async }} /se autocompleta cuando los datos llegan
+            </tr>
+            <tr>
+                <td>{{ valorDePromesa }}</td>
+                <td>|async</td>
+                <td>{{ valorDePromesa | async }}</td>
+            </tr>
+            <!-- Pipes02 -->
+            <tr class="lex">
+                {{ date }}
+            </tr>
+            <tr>
+                <td>{{ valorDePromesa }}</td>
+                <td>|date</td>
+                <td>{{ fecha | date }}</td>
+            </tr>
+            <tr>
+                <td>{{ valorDePromesa }}</td>
+                <td>|date:'medium'</td>
+                <td>{{ fecha | date: 'medium' }}</td>
+            </tr>
+            <tr>
+                <td>{{ valorDePromesa }}</td>
+                <td>|date:'MMMM-dd' /formato personalizado</td>
+                <td>{{ fecha | date: 'MMMM-dd' }}</td>
+            </tr>
+            <tr>
+                <td>{{ nombre2 }}</td>
+                <td>|capitalizado</td>
+                <td>{{ nombre2 | capitalizado }}</td>
+            </tr>
+            <tr>
+                <td>{{ nombre2 }}</td>
+                <td>|capitalizado</td>
+                <td>{{ nombre2 | capitalizado: false }}</td>
+            </tr>
+            <!-- Pipes3 -->
+            <tr>
+                <td>
+                    {{ nombre3 }}
+                </td>
+                <td>contrasena:{{ activar }}</td>
+                <button (click)="activar = !activar" type="button" class="button">
+          Activar/Desactivar
+        </button>
+                <td>{{ nombre3 | contrasena: activar }}</td>
+            </tr>
+        </tbody>
+    </table>
+    <h4>youtube video</h4>
+    <iframe width="100%" height="593" [src]="video | domseguro: 'https://www.youtube.com/embed'" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <!-- <h4>Slice</h4>
+    <ul>
+        <li *ngFor="let item of arreglo| slice :5:20">{{item}}</li>
+    </ul> -->
+</div>

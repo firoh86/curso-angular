@@ -1,0 +1,47 @@
+.container {
+    margin: 0 auto;
+    width: 80%;
+    box-sizing: content-box;
+    // color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    padding-bottom: 3em;
+}
+
+h1 {
+    text-transform: uppercase;
+    width: 80%;
+    margin: 0 auto;
+    padding: 1em;
+}
+
+thead {
+    background-color: rgb(48, 48, 48);
+    color: rgb(233, 156, 41);
+    display: flex;
+    justify-content: space-around;
+    padding: 1em;
+    border-radius: 15px 15px 0 0;
+}
+
+table {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+tr {
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    padding: 1em;
+    background-color: rgb(80, 54, 25);
+    border-bottom: 1px solid white;
+}
+
+.lex {
+    background-color: grey;
+}
+
+iframe {
+    border-radius: 15px;
+}
