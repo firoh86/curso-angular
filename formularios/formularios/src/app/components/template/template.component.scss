@@ -1,0 +1,46 @@
+.form {
+    width: 400px;
+    margin: 0 auto;
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+    background-color: rgb(240, 233, 226);
+    padding: 1em;
+    border-radius: 10px;
+    box-shadow: 3px 3px 5px rgba($color: #000000, $alpha: 0.3);
+}
+
+.form__row {
+    padding: 0.4em;
+    width: 80%;
+    display: flex;
+    justify-content: space-around;
+    align-items:center;
+}
+
+.form label,
+.form input {
+    border-radius: 5px;
+    padding: 0.2em;
+}
+
+.form input {
+    width: 50%;
+}
+
+.formButton {
+    border: 1px solid grey;
+    padding: 0.2em;
+    width: 30%;
+    border-radius: 10px;
+    background-color: #fff;
+}
+
+.formButton:hover {
+    transform: scale(0.95);
+}
+
+.ng-invalid.ng-touched:not(form){
+    border:1px solid red;
+}
+.red{
+    color:red;
+}

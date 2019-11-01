@@ -1,0 +1,83 @@
+<!-- Crear formulario -->
+<form (ngSubmit)="guardar(forma)" #forma="ngForm" class="form" novalidate="">
+    <div class="form__row">
+        <h3>Formularios template</h3>
+    </div>
+    <div class="form__row">
+        <label for="">Nombre</label>
+        <input type="text" id="" name="Nombre" placeholder="Nombre" [(ngModel)]="usuario.nombre" required minlength="5" #nombre="ngModel" />
+    </div>
+    <div class="red" *ngIf="nombre.errors?.required">Este campo es requerido</div>
+    <div class="red" *ngIf="nombre.errors?.minlength">
+        Este campo requiere un mínimo de {{ nombre.errors.minlength.requiredLength }} carácteres
+    </div>
+    <div class="form__row">
+        <label for="">Apellido</label>
+        <input type="text" name="Apellido" id="" placeholder="Apellido" [(ngModel)]="usuario.apellido" required minlength="5" #apellido="ngModel" />
+    </div>
+    <div class="red" *ngIf="apellido.errors?.required">
+        Este campo es requerido
+    </div>
+    <div class="red" *ngIf="apellido.errors?.minlength">
+        Este campo requiere un mínimo de {{ apellido.errors.minlength.requiredLength }} carácteres
+    </div>
+    <div class="form__row">
+        <label for="">Correo</label>
+        <input type="email" name="Correo" id="" placeholder="Correo electrónico" [(ngModel)]="usuario.correo" required minlength="5" pattern="^[_a-z0-9-]+(.[_a-z0-9-]+)*@[a-z0-9-]+(.[a-z0-9-]+)*(.[a-z]{2,4})$" #correo="ngModel" />
+    </div>
+    <div class="red" *ngIf="correo.errors?.required">Este campo es requerido</div>
+    <div class="red" *ngIf="correo.errors?.pattern">
+        Este campo debe contener un nombre seguido de @ nombre .es/com/etc...{{ correo.errors.pattern.requiredPattern }}
+    </div>
+    <div class="form__row">
+        <h3>Pais</h3>
+    </div>
+    <div class="form__row">
+        <select [(ngModel)]="usuario.pais" name="pais">
+      <option value="">Seleccione un país</option>
+      <option [value]="pais.codigo" *ngFor="let pais of paises">{{
+        pais.nombre
+      }}</option>
+    </select>
+    </div>
+    <div class="form__row">
+        <h3>Radios</h3>
+        <label *ngFor="let sex of sexos">
+      <input
+        [(ngModel)]="usuario.sexo"
+        type="radio"
+        class="radio"
+        name="sexo"
+        [value]="sex"
+      />
+      <span class="radio-indicator"></span>
+      <span class="radio-control">{{ sex }}</span>
+    </label>
+    </div>
+    <div class="form__row">
+        <h3>checkbox</h3>
+        <label>
+      <input
+        [(ngModel)]="usuario.acepta"
+        type="checkbox"
+        class="checkbox"
+        name="acepta"
+        required
+      />
+      <span class="radio-indicator"></span>
+      <span class="radio-control">Acepte las condiciones</span>
+    </label>
+    </div>
+    <div class="form__row">
+        <label for="">&nbsp;</label>
+        <!-- type="submit"  -->
+        <button type="submit" [disabled]="!forma.valid" class="formButton">
+      Guardar
+    </button>
+    </div>
+    <!-- La caja de bananas, con corchetes y parentesis además de oir los cambios los modifica -->
+    <!--  [(ngModel)]="usuario.correo" -->
+</form>
+<pre>
+    {{ usuario | json }}
+</pre>

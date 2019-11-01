@@ -1,0 +1,57 @@
+<form [formGroup]="forma" class="formulary" (ngSubmit)="guardarCambios()">
+    <h4>Formularios data</h4>
+    <div class="user-data" formGroupName="nombrecompleto">
+        <div class="form-row">
+            <label>Nombre</label>
+            <input type="text" placeholder="Nombre" formControlName="nombre" />
+        </div>
+
+        <div class="menssage" *ngIf="forma.get('nombrecompleto.nombre').errors?.required" [ngClass]="{
+        red: !forma.controls['nombrecompleto'].controls['nombre'].valid
+      }">
+            El nombre es necesario
+        </div>
+        <div class="menssage" *ngIf="forma.get('nombrecompleto.nombre').errors?.minlength">
+            Por lo menos 3 carácteres
+        </div>
+        <div class="form-row">
+            <label>Apellido</label>
+            <input type="text" placeholder="Apellido" formControlName="apellido" />
+        </div>
+    </div>
+    <div class="form-row">
+        <label>E-mail</label>
+        <input type="email" placeholder="correo" formControlName="correo" />
+    </div>
+    <!-- passwords -->
+    <!-- peticion asincrona -->
+    <div class="form-row">
+        <label>Username</label>
+        <input type="text" placeholder="ususario" formControlName="username" />
+    </div>
+    <div class="form-row">
+        <label>Password</label>
+        <input type="password" placeholder="password" formControlName="password1" />
+    </div>
+    <div class="form-row">
+        <label> Repetir password</label>
+        <input type="password" placeholder="Repetir contraseña" formControlName="password2" />
+    </div>
+    <div class="form-row" formArrayName="pasatiempos">
+        <label>Pasatiempos</label>
+        <div class="column">
+            <input type="text" *ngFor="let pasatiempo of forma.controls['pasatiempos'].controls" let i="i" [formControlName]="i" />
+        </div>
+    </div>
+
+    <button class="button" (click)="agregarPasatiempo()">Nuevo</button>
+
+    <div class="form__row">
+        <label for="">&nbsp;</label>
+        <!-- type="submit"  -->
+        <button type="submit" class="formButton">
+      Guardar
+    </button>
+    </div>
+    <br /> validated {{ forma.valid }} <br /> {{ forma.status }}
+</form>

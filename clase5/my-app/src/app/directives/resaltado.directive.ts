@@ -6,7 +6,7 @@ import { Directive, ElementRef, HostListener, Input } from '@angular/core';
 export class ResaltadoDirective {
   /* El representa todo el elemento y todo lo que venga de el. Elementref esta referenciando el elemento con el selector para usar la directiva. */
   constructor(private el: ElementRef) {
-    console.log('directiva creada');
+    // console.log('directiva creada');
     el.nativeElement.style.backgroundColor = null;
   }
 
