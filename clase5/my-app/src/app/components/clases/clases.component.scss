@@ -1,0 +1,29 @@
+button {
+    padding: 0.6em 0.4em;
+    background-color: rgb(104, 119, 207);
+    color: white;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+}
+
+div {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.alert {
+    padding: 1em;
+    border-radius: 5px;
+    background-color: aqua;
+    color: rgb(32, 54, 178);
+}
+
+.alert-success {
+    background-color: rgb(111, 238, 185);
+    color: rgb(34, 95, 44);
+}
+
+.alert-danger {
+    background-color: rgb(238, 111, 132);
+    color: rgb(95, 34, 42);
+}

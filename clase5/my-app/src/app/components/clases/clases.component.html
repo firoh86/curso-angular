@@ -1,0 +1,38 @@
+<div [ngClass]="alerta" class="alert" role="alert">
+    <strong>Well done!</strong> You sucefully read this important alert messagge.
+</div>
+
+<!-- cambios de clase por boton -->
+<button (click)="alerta = 'none'">alert</button>
+<button (click)="alerta = 'alert-success'">success</button>
+<button (click)="alerta = 'alert-danger'">danger</button>
+<br />
+<br />
+<!-- con boleanos -->
+<h3 [ngClass]="{ 'alert-danger': false }">Hola mundo</h3>
+<!-- con la propiedad de un objeto -->
+<h3 [ngClass]="{
+    'alert-danger': propiedades.danger,
+    'alert-success': !propiedades.danger
+  }">
+    Hola mundo
+</h3>
+
+<!-- cambia la propiedad del objeto por boton para cambiar el estilo -->
+<!-- tambien podemos cambiar el aspecto del boton con ngClass -->
+<button (click)="propiedades.danger = !propiedades.danger" [ngClass]="{
+    'alert-danger': propiedades.danger,
+    'alert-success': !propiedades.danger
+  }">
+  Cambiar
+</button>
+
+<!-- Usando procesos asincronos -->
+<br />
+<br />
+<h3>Proceso asíncrono</h3>
+
+<button [disabled]="active" class="button" (click)="espera(' hola mundo ')">
+  <fa-icon [icon]="faSync" [spin]="spin" *ngIf='mostrar' ></fa-icon>
+ {{value}}
+</button>
