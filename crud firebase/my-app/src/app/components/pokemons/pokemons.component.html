@@ -1,0 +1,55 @@
+<h1>Listado de Pokemons</h1>
+<hr />
+<div class="text-right">
+    <div>
+        <button class="button" [routerLink]="['/pokemon/nuevo']">
+      <fa-icon [icon]="faplus"></fa-icon>
+      Agregar
+    </button>
+    </div>
+</div>
+<!-- tabla -->
+<table class="table col" *ngIf="!cargandoF && pokemons.length > 0">
+    <thead class="table-head">
+        <tr class="row">
+            <th>#</th>
+            <th>Nombre</th>
+            <th>Poder</th>
+            <th>capturado?</th>
+            <th>Herramientas</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr class="row bottom-line" *ngFor="let pokemon of pokemons; let i = index">
+            <th>{{ i + 1 }}</th>
+            <td>{{ pokemon.nombre }}</td>
+            <td>{{ pokemon.elemento }}</td>
+            <td>
+                <label *ngIf="pokemon.vivo" class="blue">Libre</label>
+                <label *ngIf="!pokemon.vivo" class="red">Capturado</label>
+            </td>
+            <td>
+                <button class="button" [routerLink]="['/pokemon', pokemon.id]">
+          <fa-icon [icon]="faPen" size="1x"></fa-icon>
+        </button>
+                <button class="button red" (click)="borrarPokemon(pokemon, i)">
+          <fa-icon [icon]="faTrash" size="1x"></fa-icon>
+        </button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<div *ngIf="!cargandoF && pokemons.length === 0" class="alert alert-warning" role="alert">
+    <h4 class="alert-heading">No hay registros</h4>
+    <p>
+        <fa-icon [icon]="faExclamation" size="2x"></fa-icon>
+    </p>
+</div>
+<div class="alert alert-info" role="alert" *ngIf="cargandoF">
+    <h4 class="alert-heading">Cargando</h4>
+    <p>
+        <fa-icon [icon]="cargando" [spin]="true" size="2x"></fa-icon>
+    </p>
+    <p class="mb-0">Espere por favor</p>
+</div>

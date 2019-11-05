@@ -1,0 +1,55 @@
+.button {
+    cursor: pointer;
+    display: inline;
+    background-color: rgb(63, 88, 231);
+    color: white;
+    border: none;
+    padding: 0.6em;
+    border-radius: 5px;
+}
+
+.button-back {
+    background-color: rgb(231, 63, 71);
+    color: white;
+    border: none;
+    display: block;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.text-right {
+    width: 80%;
+    display: flex;
+    justify-content: flex-end;
+    margin: 0 auto;
+}
+
+.formulary {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.col {
+    display: flex;
+    flex-direction: column;
+}
+
+.middle {
+    margin: 0 auto;
+}
+
+.formulary label,
+.formulary input {
+    box-sizing: content-box;
+    padding: 0.6em 0.4em;
+}
+
+.form-control {
+    background-color: rgb(220, 227, 240);
+    border: 1px solid rgb(175, 195, 238);
+    border-radius: 5px;
+}
+
+.w50 {
+    width: 50%;
+}

@@ -1,0 +1,42 @@
+<h1>Pokemon <small>Nombre del pokemon</small></h1>
+<hr />
+<div class="text-right">
+    <div>
+        <button class="button button-back" [routerLink]="['/pokemons']">
+      <fa-icon [icon]="faArrowLeft"></fa-icon>
+      regresar
+    </button>
+    </div>
+</div>
+<form (ngSubmit)="guardar(f)" #f="ngForm" class="formulary">
+    <div class="col">
+        <label>Firebase ID</label>
+        <input type="text" class="form-control" disabled="disabled" placeholder="Firebase ID" [(ngModel)]="pokemon.id" name="id" />
+        <small>Este campo es autogenerado</small>
+    </div>
+    <div class="col">
+        <label>Nombre</label>
+        <input type="text" class="form-control" required placeholder="Nombre del pokemon" [(ngModel)]="pokemon.nombre" name="nombre" />
+    </div>
+    <div class="col">
+        <label>Elemento</label>
+        <input type="text" class="form-control" required placeholder="Elemento del pokemon" [(ngModel)]="pokemon.elemento" name="elemento" />
+    </div>
+    <div class="col">
+        <label>Estado</label>
+        <button *ngIf="pokemon.vivo" (click)="pokemon.vivo = false" class="button w50 " type="button">
+      <fa-icon [icon]="smile"></fa-icon>
+      libre
+    </button>
+        <button *ngIf="!pokemon.vivo" (click)="pokemon.vivo = true" class="button button-back w50" type="button">
+      <fa-icon [icon]="faDizzy"></fa-icon>
+      capturado
+    </button>
+    </div>
+    <hr />
+    <div class="col">
+        <button class="button w50 middle " type="submit">
+      <fa-icon [icon]="faSave"></fa-icon> Guardar
+    </button>
+    </div>
+</form>
